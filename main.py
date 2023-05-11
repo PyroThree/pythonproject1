@@ -3,7 +3,7 @@ from calculator import *
 
 def main():
     application = QApplication([])
-    window = Ui_MainWindow()
+    window = Calculator()
     window.show()
     application.exec_()
 
