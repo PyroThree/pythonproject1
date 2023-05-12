@@ -6,6 +6,8 @@ QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
 
 class Calculator(QMainWindow, Ui_MainWindow):
+    total = 0.00
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
@@ -34,6 +36,9 @@ class Calculator(QMainWindow, Ui_MainWindow):
         self.button_add_takoyaki.clicked.connect(lambda: self.add_takoyaki())
         self.button_add_ramune.clicked.connect(lambda: self.add_ramune())
         self.button_add_ramen.clicked.connect(lambda: self.add_ramen())
+        self.button_clear_takoyaki.clicked.connect(lambda: self.clear_takoyaki())
+        self.button_clear_ramune.clicked.connect(lambda: self.clear_ramune())
+        self.button_clear_ramen.clicked.connect(lambda: self.clear_ramen())
 
     def shop(self):
         self.button_shop.setVisible(False)
@@ -78,11 +83,42 @@ class Calculator(QMainWindow, Ui_MainWindow):
         self.button_exit.setVisible(True)
 
     def add_takoyaki(self):
+        try:
+            takoyaki = float(self.input_takoyaki.text())
+        except ValueError:
+            self.input_takoyaki.clear()
+        else:
+            Calculator.total += takoyaki * 7.00
+            self.label_price.setText(f'${Calculator.total:.2f}')
 
+    def add_ramune(self):
+        try:
+            ramune = float(self.input_ramune.text())
+        except ValueError:
+            self.input_ramune.clear()
+        else:
+            Calculator.total += ramune * 2.50
+            self.label_price.setText(f'${Calculator.total:.2f}')
+
+    def add_ramen(self):
+        try:
+            ramen = float(self.input_ramen.text())
+        except ValueError:
+            self.input_ramen.clear()
+        else:
+            Calculator.total += ramen * 11.50
+            self.label_price.setText(f'${Calculator.total:.2f}')
+
+    def clear_takoyaki(self):
+        self.input_takoyaki.clear()
+
+    def clear_ramune(self):
+        self.input_ramune.clear()
+
+    def clear_ramen(self):
+        self.input_ramen.clear()
 
     def clear_cart(self):
-        takoyaki = 0.00
-        ramune = 0.00
-        ramen = 0.00
-
+        Calculator.total = 0.00
+        self.label_price.setText('')
 

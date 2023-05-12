@@ -210,7 +210,7 @@
    <widget class="QLabel" name="label_total">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>190</x>
       <y>405</y>
       <width>111</width>
       <height>30</height>
@@ -256,6 +256,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
    </widget>
    <widget class="QLineEdit" name="input_ramune">
     <property name="geometry">
@@ -266,6 +269,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
    </widget>
    <widget class="QLineEdit" name="input_ramen">
     <property name="geometry">
@@ -275,6 +281,9 @@
       <width>100</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="button_clear_takoyaki">
@@ -357,9 +366,9 @@
    <widget class="QLabel" name="label_price">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>310</x>
       <y>405</y>
-      <width>47</width>
+      <width>71</width>
       <height>30</height>
      </rect>
     </property>
