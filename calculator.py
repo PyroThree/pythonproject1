@@ -25,10 +25,15 @@ class Calculator(QMainWindow, Ui_MainWindow):
         self.button_clear_takoyaki.setVisible(False)
         self.button_clear_ramune.setVisible(False)
         self.button_clear_ramen.setVisible(False)
+        self.label_price.setVisible(False)
 
         self.button_shop.clicked.connect(lambda: self.shop())
         self.button_exit.clicked.connect(lambda: self.close())
         self.button_main.clicked.connect(lambda: self.menu())
+        self.button_clear.clicked.connect(lambda:self.clear_cart())
+        self.button_add_takoyaki.clicked.connect(lambda: self.add_takoyaki())
+        self.button_add_ramune.clicked.connect(lambda: self.add_ramune())
+        self.button_add_ramen.clicked.connect(lambda: self.add_ramen())
 
     def shop(self):
         self.button_shop.setVisible(False)
@@ -49,6 +54,7 @@ class Calculator(QMainWindow, Ui_MainWindow):
         self.button_clear_takoyaki.setVisible(True)
         self.button_clear_ramune.setVisible(True)
         self.button_clear_ramen.setVisible(True)
+        self.label_price.setVisible(True)
 
     def menu(self):
         self.label_takoyaki.setVisible(False)
@@ -66,9 +72,17 @@ class Calculator(QMainWindow, Ui_MainWindow):
         self.button_clear_takoyaki.setVisible(False)
         self.button_clear_ramune.setVisible(False)
         self.button_clear_ramen.setVisible(False)
+        self.label_price.setVisible(False)
 
         self.button_shop.setVisible(True)
         self.button_exit.setVisible(True)
 
-    def total(self):
-        pass
+    def add_takoyaki(self):
+
+
+    def clear_cart(self):
+        takoyaki = 0.00
+        ramune = 0.00
+        ramen = 0.00
+
+
