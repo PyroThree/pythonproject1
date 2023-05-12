@@ -7,6 +7,9 @@ QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
 class Calculator(QMainWindow, Ui_MainWindow):
     total = 0.00
+    takoyaki = 0.00
+    ramune = 0.00
+    ramen = 0.00
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -87,27 +90,36 @@ class Calculator(QMainWindow, Ui_MainWindow):
             takoyaki = float(self.input_takoyaki.text())
         except ValueError:
             self.input_takoyaki.clear()
+        if takoyaki <= 0:
+            self.input_takoyaki.clear()
         else:
             Calculator.total += takoyaki * 7.00
             self.label_price.setText(f'${Calculator.total:.2f}')
+            self.input_takoyaki.clear()
 
     def add_ramune(self):
         try:
             ramune = float(self.input_ramune.text())
         except ValueError:
             self.input_ramune.clear()
+        if ramune <= 0:
+            self.input_ramune.clear()
         else:
             Calculator.total += ramune * 2.50
             self.label_price.setText(f'${Calculator.total:.2f}')
+            self.input_ramune.clear()
 
     def add_ramen(self):
         try:
             ramen = float(self.input_ramen.text())
         except ValueError:
             self.input_ramen.clear()
+        if ramen <= 0:
+            self.input_ramen.clear()
         else:
             Calculator.total += ramen * 11.50
             self.label_price.setText(f'${Calculator.total:.2f}')
+            self.input_ramen.clear()
 
     def clear_takoyaki(self):
         self.input_takoyaki.clear()
