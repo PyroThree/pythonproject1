@@ -99,8 +99,10 @@ class Calculator(QMainWindow, Ui_MainWindow):
             takoyaki = float(self.input_takoyaki.text())
         except ValueError:
             self.input_takoyaki.clear()
+            return
         if takoyaki <= 0:
             self.input_takoyaki.clear()
+            return
         else:
             Calculator.total += takoyaki * 7.00
             self.label_price.setText(f'${Calculator.total:.2f}')
@@ -114,8 +116,10 @@ class Calculator(QMainWindow, Ui_MainWindow):
             ramune = float(self.input_ramune.text())
         except ValueError:
             self.input_ramune.clear()
+            return
         if ramune <= 0:
             self.input_ramune.clear()
+            return
         else:
             Calculator.total += ramune * 2.50
             self.label_price.setText(f'${Calculator.total:.2f}')
@@ -129,8 +133,10 @@ class Calculator(QMainWindow, Ui_MainWindow):
             ramen = float(self.input_ramen.text())
         except ValueError:
             self.input_ramen.clear()
+            return
         if ramen <= 0:
             self.input_ramen.clear()
+            return
         else:
             Calculator.total += ramen * 11.50
             self.label_price.setText(f'${Calculator.total:.2f}')
