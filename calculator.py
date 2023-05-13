@@ -44,6 +44,9 @@ class Calculator(QMainWindow, Ui_MainWindow):
         self.button_clear_ramen.clicked.connect(lambda: self.clear_ramen())
 
     def shop(self):
+        """
+        Method that sets Shop buttons to be visible and usable
+        """
         self.button_shop.setVisible(False)
         self.button_exit.setVisible(False)
 
@@ -65,6 +68,9 @@ class Calculator(QMainWindow, Ui_MainWindow):
         self.label_price.setVisible(True)
 
     def menu(self):
+        """
+        Method that hides all Shop buttons and makes Menu buttons visible and usable
+        """
         self.label_takoyaki.setVisible(False)
         self.label_ramune.setVisible(False)
         self.label_ramen.setVisible(False)
@@ -86,6 +92,9 @@ class Calculator(QMainWindow, Ui_MainWindow):
         self.button_exit.setVisible(True)
 
     def add_takoyaki(self):
+        """
+        Method for pulling input for takoyaki and multiplying by cost and adding to total
+        """
         try:
             takoyaki = float(self.input_takoyaki.text())
         except ValueError:
@@ -98,6 +107,9 @@ class Calculator(QMainWindow, Ui_MainWindow):
             self.input_takoyaki.clear()
 
     def add_ramune(self):
+        """
+        Method for pulling input for ramune and multiplying by cost and adding to total
+        """
         try:
             ramune = float(self.input_ramune.text())
         except ValueError:
@@ -110,6 +122,9 @@ class Calculator(QMainWindow, Ui_MainWindow):
             self.input_ramune.clear()
 
     def add_ramen(self):
+        """
+        Method for pulling input for ramen and multiplying by cost and adding to total
+        """
         try:
             ramen = float(self.input_ramen.text())
         except ValueError:
@@ -122,15 +137,27 @@ class Calculator(QMainWindow, Ui_MainWindow):
             self.input_ramen.clear()
 
     def clear_takoyaki(self):
+        """
+        Method to clear input for takoyaki
+        """
         self.input_takoyaki.clear()
 
     def clear_ramune(self):
+        """
+        Method to clear input for ramune
+        """
         self.input_ramune.clear()
 
     def clear_ramen(self):
+        """
+        Method to clear input for ramen
+        """
         self.input_ramen.clear()
 
     def clear_cart(self):
+        """
+        Method to set total back to 0 and clear text of total from GUI
+        """
         Calculator.total = 0.00
         self.label_price.setText('')
 
